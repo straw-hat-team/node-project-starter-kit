@@ -1,0 +1,37 @@
+{
+  "name": "@straw-hat/node-project-starter-kit",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "node dist/main.js",
+    "test": "jest --coverage --verbose --passWithNoTests",
+    "prebuild:tsc": "yarn clean",
+    "build:tsc": "tsc -p tsconfig.prod.json",
+    "build": "run-p build:*",
+    "predev:tsc": "yarn clean",
+    "dev:tsc": "tsc -w -p tsconfig.prod.json",
+    "dev:app": "nodemon dist/main.js",
+    "dev": "run-p dev:*",
+    "format": "prettier --write '**/*'",
+    "ci:format": "yarn format --check",
+    "ci": "run-p ci:*"
+  },
+  "dependencies": {
+    "dotenv": "8.2.0"
+  },
+  "devDependencies": {
+    "@straw-hat/prettier-config": "1.0.2",
+    "@types/jest": "26.0.14",
+    "husky": "4.3.0",
+    "jest": "26.4.2",
+    "lint-staged": "10.4.0",
+    "nodemon": "2.0.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.3.0",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.2"
+  }
+}

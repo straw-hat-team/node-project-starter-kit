@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Program",
+      "type": "node",
+      "program": "${workspaceFolder}/dist/server.js",
+      "request": "launch",
+      "preLaunchTask": "npm: build",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach by Process ID",
+      "type": "node",
+      "request": "attach",
+      "processId": "${command:PickProcess}",
+      "protocol": "inspector"
+    },
+    {
+      "name": "Jest Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      "args": ["${file}", "--detectOpenHandles"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "name": "Jest all",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "test"],
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
