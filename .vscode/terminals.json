@@ -6,7 +6,7 @@
       "name": "Development",
       "cwd": "[workspaceFolder]",
       "command": "yarn dev",
-      "persistent": "node_project_starter_kit_testing",
+      "persistent": "node_project_starter_kit_development",
       "recycle": true,
       "open": false,
       "focus": false,
