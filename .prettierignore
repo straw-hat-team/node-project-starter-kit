@@ -10,4 +10,4 @@ LICENSE
 *.log
 .prettierignore
 .env*
-
+.npmrc
